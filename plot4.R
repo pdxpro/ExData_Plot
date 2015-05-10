@@ -22,7 +22,7 @@ plot4 <- function(){
   
   ## Construct the plot and save it to a PNG file with a width of 480 pixels 
   ## and a height of 480 pixels.
-  png(filename = "plot4.png", width=480, height=480)
+  png(filename = ".\\plot4.png", width=480, height=480)
   par(mfrow = c(2, 2))
   with(febData, {
     plot(datetime, as.numeric(febData$Global_active_power), col= "black", type='l', xlab="", ylab="Global Active Power")    
@@ -30,7 +30,7 @@ plot4 <- function(){
     plot(datetime, as.numeric(febData$Sub_metering_1), col= "black", type='l', xlab="", ylab="Energy sub metering")
       lines(datetime, as.numeric(febData$Sub_metering_2), col= "red", type='l')
       lines(datetime, as.numeric(febData$Sub_metering_3), col= "blue", type='l')
-      legend("topright", pch=1, col=c("black","red","blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, cex = 0.7)
+      legend("topright", pch=NA_integer_, col=c("black","red","blue"), bty="n" , legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, cex = 0.7)
     plot(datetime, as.numeric(febData$Global_reactive_power), col= "black", type='l', xlab="datetime", ylab="Global_reactive_power")
   } )
   dev.off()
